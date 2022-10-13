@@ -22,10 +22,21 @@
             console.log('Perdimos la conexión con el servidor de sockets.')
         });
 
-        socket.emit('mensaje', { nombre: 'Frenando'});
+        // socket.emit('mensaje', { nombre: 'Frenando'});
 
-        socket.on('mensaje', function(payload) {
-            console.log('Escuchando:', payload)
+        // socket.on('mensaje', function(payload) {
+        //     console.log('Escuchando:', payload)
+        // })
+
+        // socket.on('nuevo-mensaje', function( payload) {
+        //     console.log('Escuchando:', payload)
+        //     // io.emit('nuevo-mensaje', 'HEY!!!!');
+        // })
+
+        // App
+        socket.on('active-bands', function( bands ) {
+            console.clear();
+            console.table( bands );
         })
 
     </script>
